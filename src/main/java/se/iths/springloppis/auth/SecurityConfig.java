@@ -25,9 +25,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public DaoAuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(); // Skapar DaoAuthenticationProvider
         provider.setUserDetailsService(userDetailService); // Kopplar ihop den med våran userDetailService, som är den som hämtgar ut våran userEntity och skapar upp en Principal.
-        provider.setPasswordEncoder(new BCryptPasswordEncoder());
+        provider.setPasswordEncoder(bCryptPasswordEncoder());
         return provider;
 
+    }
+
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 
     @Override

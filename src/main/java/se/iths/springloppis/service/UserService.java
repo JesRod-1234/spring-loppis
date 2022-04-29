@@ -14,10 +14,11 @@ public class UserService {
 //    BeanScopesDemo beanScopesDemo;
 
     private final UserRepository userRepository;
-    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
     public UserEntity createUser(UserEntity user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
