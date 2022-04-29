@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 
 @Component
-//@Scope("prototype")
+//@Scope("prototype")  -
 public class BeanScopesDemo {
-    Logger logger = LoggerFactory.getLogger((BeanScopesDemo.class));
+    Logger logger = LoggerFactory.getLogger(BeanScopesDemo.class);
 
     @PostConstruct
     public void init(){

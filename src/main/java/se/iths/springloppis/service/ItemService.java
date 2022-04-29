@@ -11,6 +11,9 @@ public class ItemService {
 //    @Autowired    // De här motsvarar Inject annotationen i Enterprice. Dock vill man helst skapa en konstruktor.
 //    BeanScopesDemo beanScopesDemo;
 
+   /* @Autowired
+    BeanScopesDemo beanScopesDemo;*/
+
     private final ItemRepository itemRepository;
 
     //@Autowired // Man behöver dock ej använda den så mycket längre. Men förr var man tvungen att använda den.
